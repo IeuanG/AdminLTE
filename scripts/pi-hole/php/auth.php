@@ -24,7 +24,7 @@ function check_cors() {
         $ipv4,
         $ipv6,
         $_SERVER["SERVER_NAME"],
-        "pi.hole",
+        "ad.wall",
         "localhost"
     );
 

@@ -200,7 +200,7 @@ function updateTopLists() {
             if ({}.hasOwnProperty.call(data.top_queries,domain)){
                 // Sanitize domain
                 domain = escapeHtml(domain);
-                if(domain !== "pi.hole")
+                if(domain !== "ad.wall")
                 {
                     url = "<a href=\"queries.php?domain="+domain+"\">"+domain+"</a>";
                 }

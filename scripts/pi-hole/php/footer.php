@@ -9,7 +9,7 @@
             $webBranch = exec("git rev-parse --abbrev-ref HEAD");
 
             // Use vDev if not on master
-            if($piholeBranch !== "master") {
+/*            if($piholeBranch !== "master") {
                 $piholeVersion = "vDev";
                 $piholeCommit = exec("cd /etc/.pihole/ && git describe --long --dirty --tags");
             }
@@ -23,7 +23,9 @@
             }
             else {
                 $webVersion = exec("git describe --tags --abbrev=0");
-            }
+            }*/
+	    $piholeVersion = 2.12;
+	    $webVersion = 2.4;
             ?>
         <div class="pull-right hidden-xs <?php if(isset($piholeCommit) || isset($webCommit)) { ?>hidden-md<?php } ?>">
             <b>Pi-hole Version </b> <span id="piholeVersion"><?php echo $piholeVersion; ?></span><?php if(isset($piholeCommit)) { echo " (".$piholeBranch.", ".$piholeCommit.")"; } ?>

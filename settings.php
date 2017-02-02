@@ -189,7 +189,7 @@
 					</div>
 				</div>
 				<div class="col-md-6">
-					<p id="dhcpnotice" <?php if(!$DHCP){ ?>hidden<?php } ?>>Make sure your router's DHCP server is disabled when using the Pi-hole DHCP server!</p>
+					<p id="dhcpnotice" <?php if(!$DHCP){ ?>hidden<?php } ?>>Make sure your router's DHCP server is disabled when using the AdWall DHCP server!</p>
 				</div>
 					<div class="col-md-12">
 						<label>Range of IP addresses to hand out</label>
@@ -499,7 +499,7 @@
 							<div class="form-group">
 								<div class="checkbox"><label><input type="checkbox" name="DNSSEC" <?php if($DNSSEC){ ?>checked<?php } ?>> Use DNSSEC</label></div>
 							</div>
-							<p>Validate DNS replies and cache DNSSEC data. When forwarding DNS queries, Pi-hole requests the DNSSEC records needed to  validate the replies. Use Google or Norton DNS servers when activating DNSSEC. Note that the size of your log might increase significantly when enabling DNSSEC. A DNSSEC resolver test can be found <a href="http://dnssec.vs.uni-due.de/" target="_blank">here</a>.</p>
+							<p>Validate DNS replies and cache DNSSEC data. When forwarding DNS queries, AdWall requests the DNSSEC records needed to  validate the replies. Use Google or Norton DNS servers when activating DNSSEC. Note that the size of your log might increase significantly when enabling DNSSEC. A DNSSEC resolver test can be found <a href="http://dnssec.vs.uni-due.de/" target="_blank">here</a>.</p>
 						</div>
 					</div>
 				</div>
@@ -631,7 +631,7 @@
 					</div>
 				</div>
 				<h4>Reverse DNS lookup</h4>
-				<p>Try to determine the domain name via querying the Pi-hole for</p>
+				<p>Try to determine the domain name via querying the AdWall for</p>
 				<div class="col-lg-6">
 					<div class="form-group">
 						<div class="checkbox"><label><input type="checkbox" name="resolve-forward" <?php if($resolveForward){ ?>checked<?php } ?>> Forward Destinations</label></div>
@@ -754,14 +754,14 @@
 		</div>
 		<div class="box box-danger collapsed-box">
 			<div class="box-header with-border">
-				<h3 class="box-title">Pi-hole Teleporter</h3>
+				<h3 class="box-title">AdWall Teleporter</h3>
 				<div class="box-tools pull-right"><button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button></div>
 			</div>
 			<div class="box-body">
 			<?php if (extension_loaded('zip')) { ?>
 				<form role="form" method="post" id="takeoutform" action="scripts/pi-hole/php/teleporter.php" target="_blank"  enctype="multipart/form-data">
 					<div class="col-lg-12">
-						<p>Export your Pi-hole lists as downloadable ZIP file</p>
+						<p>Export your AdWall lists as downloadable ZIP file</p>
 						<button type="submit" class="btn btn-default" name="action" value="out">Export</button>
 					<hr>
 					</div>
@@ -783,13 +783,13 @@
 						<div class="form-group">
 							<label for="zip_file">File input</label>
 							<input type="file" name="zip_file" id="zip_file">
-							<p class="help-block">Upload only Pi-hole backup files.</p>
+							<p class="help-block">Upload only AdWall backup files.</p>
 							<button type="submit" class="btn btn-default" name="action" value="in">Import</button>
 						</div>
 					</div>
 				</form>
 			<?php } else { ?>
-				<p>The PHP extension <tt>zip</tt> is not loaded. Please ensure it is installed and loaded if you want to use the Pi-hole teleporter.</p>
+				<p>The PHP extension <tt>zip</tt> is not loaded. Please ensure it is installed and loaded if you want to use the AdWall teleporter.</p>
 			<?php } ?>
 			</div>
 		</div>
